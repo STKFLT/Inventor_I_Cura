@@ -67,8 +67,6 @@ def fixup_temp_setting(tokens):
 
 @actor
 def wait_for_inactive_nozzle_cooling(tokens):
-    if LINE_NUM == 2955:
-        import pdb; pdb.set_trace()
     if (LINE_NUM-10) <= LAST_EXTRUDER_SWAP and tokens[0] == "M104":
         # either heating up active or cooling inactive, let's check
         if tokens[1]["T"] != CURR_EXTRUDER:
